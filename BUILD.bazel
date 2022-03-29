@@ -109,3 +109,11 @@ cc_library(
     linkstatic = 1,
     strip_include_prefix = "/include",
 )
+
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+swift_library(
+    name = "Flatbuffers",
+    srcs = glob(["swift/Sources/FlatBuffers/*.swift"]),
+    module_name = "FlatBuffers",
+)
+
